@@ -1,0 +1,5 @@
+<div>
+  <h1>Last Product Selected</h1>
+  <p >{{productsSelected?.productName}}</p>
+</div>
+<pm-product-list (productsSelectedChange)="handleSelectionChange($event)"> </pm-product-list>

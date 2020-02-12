@@ -14,6 +14,7 @@ import { ProductEditGuard } from './product-edit/product-edit.guard';
 import { ProductListOneAtATimeComponent } from './product-list/product-list-one.component';
 
 import { SharedModule } from '../shared/shared.module';
+import { ProductListShellComponent } from './product-list/product-list-shell/product-list-shell.component';
 
 @NgModule({
   imports: [
@@ -22,7 +23,7 @@ import { SharedModule } from '../shared/shared.module';
     RouterModule.forChild([
       {
         path: '',
-        component: ProductListComponent
+        component: ProductListShellComponent
       },
       {
         path: 'asyncPipe',
@@ -59,7 +60,8 @@ import { SharedModule } from '../shared/shared.module';
     ProductListOneAtATimeComponent,
     ProductDetailComponent,
     ProductSuppliersComponent,
-    ProductEditComponent
+    ProductEditComponent,
+    ProductListShellComponent
   ]
 })
 export class ProductModule { }

@@ -9,6 +9,7 @@
              *ngIf="products">
         <thead>
           <tr>
+            <th></th>
             <th>Product</th>
             <th>Code</th>
             <th>Price</th>
@@ -18,6 +19,7 @@
         </thead>
         <tbody>
           <tr *ngFor="let product of products">
+
             <td>
               <a [routerLink]="[product.id]">
                 {{ product.productName }}

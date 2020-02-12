@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
 
 import { Product } from '../product';
 import { ProductService } from '../product.service';
@@ -12,6 +12,7 @@ export class ProductListComponent implements OnInit, OnDestroy {
   pageTitle = 'Product List';
   errorMessage = '';
   products: Product[];
+  selectedProducts: Product[];
   private subscription: Subscription;
 
   constructor(private productService: ProductService) { }
@@ -46,4 +47,5 @@ export class ProductListComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
+
 }

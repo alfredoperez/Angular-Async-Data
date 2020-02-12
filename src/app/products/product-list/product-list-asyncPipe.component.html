@@ -1,14 +1,18 @@
 <div class="card">
   <div class="card-header">
     {{pageTitle}}
+
   </div>
 
+
   <div class="card-body">
+    <h3 style="color: blue">{{resizingLabel}}</h3>
     <div class="table-responsive">
       <table class="table mb-0"
              *ngIf="products$ | async as products">
         <thead>
           <tr>
+            <th></th>
             <th>Product</th>
             <th>Code</th>
             <th>Price</th>
@@ -17,6 +21,9 @@
         </thead>
         <tbody>
           <tr *ngFor="let product of products">
+            <td>
+              <input type="checkbox" (click)="onProductSelected(product)"/>
+            </td>
             <td>
               <a [routerLink]="['/products', product.id]">
                 {{ product.productName }}
